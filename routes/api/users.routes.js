@@ -7,8 +7,8 @@ const { check, validationResult } = require("express-validator");
 // @access  Public
 router.post("/", [
   check('name', "Name is required").not().isEmpty(),
-  check('email', "Email invalid").isEmail(),
-  check('password', "Password invalid").isLength({min: 6}),
+  check('email', "Email is invalid").isEmail(),
+  check('password', "Password is invalid").isLength({min: 6}),
 ], (req, res) => {
   const err = validationResult(req);
 
